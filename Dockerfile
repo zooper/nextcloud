@@ -51,8 +51,8 @@ RUN set -ex; \
 
 RUN mkdir -p \
     /var/log/supervisord \
-    /var/run/supervisord \
-;
+    /var/run/supervisord && \
+    chmod -R 777 /var/log/supervisord /var/run/supervisord
 
 COPY supervisord.conf /
 
